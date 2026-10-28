@@ -1,27 +1,47 @@
-# Navbar, Footer & StatsPanel — local practice project
+# New Generation High School — Student Portal
 
-This is a **separate practice project** for Assignment 1. It does not change your group's GitHub repository.
+A **working single-page preview** of the SAIT Assignment 1 requirements, made to replace the earlier instructions-only practice page. This is a separate local project: it does not edit or push to your group's GitHub repository.
 
-## Files you should edit
+## Run locally (Windows PowerShell / VS Code)
 
-- `components/NavBar.tsx` — school title and same-page links
-- `components/Footer.tsx` — school contact information
-- `components/StatsPanel.tsx` — total students, honour roll (average >= 80), and grade 12 count
+1. Extract the ZIP and open the project folder (the folder containing `package.json`) in VS Code.
+2. Open Terminal > New Terminal.
+3. Run `npm.cmd install` once in this project folder.
+4. Run `npm.cmd run dev`.
+5. Visit http://localhost:3000.
 
-`app/layout.tsx` connects the navbar and footer. `app/page.tsx` is only a temporary preview/testing page; **don't copy that page into your teammates' project**. `data/students.ts` provides sample data for testing.
+## What you should see
 
-## Run it in VS Code
+- A school navigation bar with links to Overview, Students, and Add a student.
+- Three live summary panels: Students, Honour roll, and Graduating.
+- A searchable grid of eight student cards. Each card can expand independently and remove a student.
+- An Add student area with four inputs and a button.
+- A Clear all button that resets the visible list and counters to zero.
+- The school contact footer at the bottom.
 
-1. Extract the ZIP, then open its folder in VS Code.
-2. Open **Terminal > New Terminal**.
-3. Run `npm install` (first time only).
-4. Run `npm run dev`.
-5. Visit `http://localhost:3000` in your browser.
+## Division of work / integration
 
-The buttons on the preview page change the sample student array to test `StatsPanel`. Check the Navbar's section links and the Footer at the bottom. Test on a narrow browser window too.
+- **Member A:** `components/NavBar.tsx`, `components/Footer.tsx`, `components/StatsPanel.tsx`, `app/layout.tsx`, overall styling.
+- **Member B:** `data/students.ts`, `components/StudentList.tsx`, `components/StudentCard.tsx`.
+- **Member C:** `components/StudentPortal.tsx`, `components/SearchBox.tsx`, `components/AddStudent.tsx`.
 
-## Move your finished work into your branch
+**Only copy your own three assigned component files into your group's branch** after coordinating names and props with teammates. Do not overwrite your teammates' files or blindly replace their `app/page.tsx` or `app/layout.tsx`.
 
-Copy only `components/NavBar.tsx`, `components/Footer.tsx`, and `components/StatsPanel.tsx` into the matching `components/` folder on your GitHub branch. Coordinate with your group before changing `app/layout.tsx`; it must import both Navbar and Footer. Replace the author placeholders with your real name, and update dates/descriptions to reflect your own work. Commit your components separately from your own account.
+The school contact details and student records are fictional sample content. File comments still contain author placeholders; each contributor should edit the comments to describe their own work and enter their own name and date.
 
-This project uses Next.js, TypeScript, and Tailwind through npm, **not** the Tailwind CDN.
+## Test checklist (to perform in browser; record results honestly)
+
+| # | Manual test | Result |
+|---|---|---|
+| 1 | Open app: eight students and correct stats | Not tested |
+| 2 | Show/hide one card; other cards stay closed | Not tested |
+| 3 | Remove a grade 12 student: both total and graduating fall | Not tested |
+| 4 | Search `AHMED`, then clear search | Not tested |
+| 5 | Search `zzz`: empty message, unchanged stats | Not tested |
+| 6 | Blank first name + filled last name: nothing added | Not tested |
+| 7 | Add student; fields reset to blank/9/70 and stats update | Not tested |
+| 8 | Clear all: empty list, stats all zero | Not tested |
+| 9 | Phone width: one card per row, no horizontal overflow | Not tested |
+| 10 | Navbar links jump to the correct sections | Not tested |
+
+Before submission your group must include actual member contributions, GitHub repository and deployed links, and completed real-world test results. Don't record Pass for tests you haven't run.
