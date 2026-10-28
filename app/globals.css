@@ -1,0 +1,10 @@
+/*
+ * File: app/globals.css
+ * Author: Member A (add your name)
+ * Date: October 27, 2026
+ * This stylesheet loads Tailwind CSS for the entire project.
+ * The components use Tailwind utility classes for their appearance.
+ * Responsive layouts are handled directly in those class names.
+ * No extra custom CSS rules are needed for this assignment.
+ */
+@import "tailwindcss";
